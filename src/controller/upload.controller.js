@@ -4,7 +4,7 @@ import Product from "../models/product.model.js";
 
 export const uploadProduct = async (req, res) => {
   try {
-    // ✅ Correct check for single upload
+    // ✅ Check if file exists
     if (!req.file) {
       return res.status(400).json({ message: "Image is required" });
     }
@@ -14,7 +14,7 @@ export const uploadProduct = async (req, res) => {
       folder: "products",
     });
 
-    // ✅ Delete temp file
+    // ✅ Delete temp file from server
     await fs.unlink(req.file.path);
 
     // ✅ Create product
@@ -35,7 +35,7 @@ export const uploadProduct = async (req, res) => {
     });
 
   } catch (error) {
-    console.log("UPLOAD ERROR:", error);
+    console.error("UPLOAD ERROR:", error);
     return res.status(500).json({ error: error.message });
   }
 };
