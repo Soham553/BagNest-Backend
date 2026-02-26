@@ -4,11 +4,12 @@ import Product from "../models/product.model.js";
 
 export const uploadProduct = async (req, res) => {
     try {
+        const result = " "
         if(!req.files){
             return res.status(400).json({ message: "Image is required " });
         }
         if (req.file) {
-            const result = await cloudinary.uploader.upload(req.file.path, {
+            result = await cloudinary.uploader.upload(req.file.path, {
                 folder: "products",
             });
 
