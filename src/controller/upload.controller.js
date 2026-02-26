@@ -5,10 +5,7 @@ import Product from "../models/product.model.js";
 export const uploadProduct = async (req, res) => {
   try {
     // ✅ Check if file exists
-    console.log("ENV CHECK:");
-    console.log("CLOUD_NAME:", process.env.Cloud_Name);
-    console.log("CLOUD_API_KEY:", process.env.Api_Key);
-    console.log("CLOUD_API_SECRET:", process.env.Api_Secret);
+    console.log("Cloudinary config:", cloudinary.config());
     if (!req.file) {
       return res.status(400).json({ message: "Image is required" });
     }
