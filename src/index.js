@@ -1,13 +1,12 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-
-
 import { connect } from 'mongoose';
 import app from './app.js';
 import connectDb from './db/connect.js';
 import { env } from 'process';
 
+configureCloudinary(); 
 
 connectDb()
 .then(() => {
