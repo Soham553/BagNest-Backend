@@ -8,11 +8,11 @@ connectDb()
 .then(() => {
 
     app.get('/', (req, res) => {
-        res.send("API is running....:", process.env.Cloud_Name);
+        res.send("API is running....:");
     })
 
     app.listen(process.env.PORT || 5000, () => {
-        console.log(`server is running on port ${process.env.PORT || 5000}`);
+        console.log(`server is running on port ${process.env.PORT || 5000},${process.env.Cloud_Name}`);
     })
 })
 .catch((err) => {
