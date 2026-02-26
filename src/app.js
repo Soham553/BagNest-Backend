@@ -5,6 +5,9 @@ import router from './routes/product.routes.js';
 
 const app = express();
 
+import dotenv from "dotenv";
+dotenv.config();
+
 app.use(cors({
     origin : process.env.CORS_ORG,
     credentials : true
