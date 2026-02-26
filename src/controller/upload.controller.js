@@ -4,28 +4,23 @@ import Product from "../models/product.model.js";
 
 export const uploadProduct = async (req, res) => {
   try {
-    // ✅ Check if file exists
-    console.log("Cloudinary config:", cloudinary.config());
     if (!req.file) {
       return res.status(400).json({ message: "Image is required" });
     }
 
-    // ✅ Upload to Cloudinary
     const result = await cloudinary.uploader.upload(req.file.path, {
       folder: "products",
     });
 
-    // ✅ Delete temp file from server
     await fs.unlink(req.file.path);
 
-    // ✅ Create product
     const product = new Product({
       name: req.body.name,
       price: req.body.price,
       image: result.secure_url,
       height: req.body.height,
       width: req.body.width,
-      num_of_pockets: req.body.num_of_pockets,
+      num_of_pockets: req.body.no_of_pockets,
     });
 
     await product.save();
