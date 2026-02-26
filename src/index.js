@@ -5,6 +5,7 @@ import { connect } from 'mongoose';
 import app from './app.js';
 import connectDb from './db/connect.js';
 import { env } from 'process';
+import { configureCloudinary } from "./utils/cloudinary.js";
 
 configureCloudinary(); 
 
