@@ -2,7 +2,7 @@ import Product from "../models/product.model.js";
 
 export const getproducts = async (req, res) => {
     try{
-        const Products = await Product.find();
+        const Products = await Product.find().lean();
 
         res.status(200).json({
             count: Products.length,
