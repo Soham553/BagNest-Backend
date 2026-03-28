@@ -7,7 +7,7 @@ export const uploadProduct = async (req, res) => {
     if (!req.files) {
       return res.status(400).json({ message: "Image is required" });
     }
-    console.log(req.files);
+    
     const uploadpromises = req.files.map(file => 
       cloudinary.uploader.upload(file.path, {
         folder: "products"
