@@ -8,7 +8,7 @@ import { adminLogin } from "../controller/login.controller.js";
 
 const router = Router()
 
-router.post("/upload", upload.single("image"), uploadProduct);
+router.post("/upload", upload.array("image", 5), uploadProduct);
 router.route("/products").get(getproducts);
 router.route("/products/:id").delete(deleteProducts);
 router.put(

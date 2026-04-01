@@ -3,7 +3,7 @@ import Product from "../models/product.model.js";
 export const deleteProducts = async (req, res) => {
     try{
        const id = req.params.id;
-        const deleteproduct = await Product.findByIdAndDelete(id);
+        const deleteproduct = await Product.deleteOne({ _id: id });
 
         if (!deleteproduct) {
         return res.status(404).json({ message: "Product not found" });
