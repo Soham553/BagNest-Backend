@@ -9,13 +9,11 @@ const youtube = google.youtube("v3");
 
 export const uploadProduct = async (req, res) => {
   try {
-    // if (!req.files?.image) {
-    //   return res.status(400).json({ message: "Image is required" });
-    // }
-  let images;
-  
-   if(req.files.image){
-     const uploadpromises = req.files.image.map(file => 
+    if (!req.files?.image) {
+      return res.status(400).json({ message: "Image is required" });
+    }
+    
+    const uploadpromises = req.files.image.map(file => 
       cloudinary.uploader.upload(file.path, {
         folder: "products"
       })
@@ -24,7 +22,7 @@ export const uploadProduct = async (req, res) => {
     const results = await Promise.all(uploadpromises);
 
     images = results.map(result => result.secure_url);
-   }
+   
 
   
 
