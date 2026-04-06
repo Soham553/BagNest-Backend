@@ -9,7 +9,7 @@ const oauth2Client = new google.auth.OAuth2(
 
 
 oauth2Client.setCredentials({
-    refresh_token: process.env.REFRESH_TOKEN
+    refresh_token: process.env.REFRESH_TOKEN,
 })
 
 export const auth = oauth2Client;
