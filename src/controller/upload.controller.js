@@ -2,7 +2,7 @@ import fs from "fs";
 import cloudinary from "../utils/cloudinary.js";
 import Product from "../models/product.model.js";
 import fsPromises from "fs/promises";
-import { google } from "googleapi";
+import { google } from "googleapis";
 import {auth} from "./auth.js" 
 
 const youtube = google.youtube("v3");
