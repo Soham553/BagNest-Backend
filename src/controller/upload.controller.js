@@ -12,7 +12,6 @@ export const uploadProduct = async (req, res) => {
     // if (!req.files?.image) {
     //   return res.status(400).json({ message: "Image is required" });
     // }
-  
   let images;
   
    if(req.files.image){
@@ -25,7 +24,7 @@ export const uploadProduct = async (req, res) => {
     const results = await Promise.all(uploadpromises);
 
     images = results.map(result => result.secure_url);
-   
+   }
 
   
 
