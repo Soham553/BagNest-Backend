@@ -36,7 +36,6 @@ export const uploadProduct = async (req, res) => {
     const videoFile = req.files.video?.[0];
 
     if(videoFile) {
-       console.log("inside the if 1");
       const ytRes = await youtube.videos.insert({
         auth,
         part:"snippet,status",

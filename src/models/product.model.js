@@ -7,6 +7,9 @@ const productSchema = new mongoose.Schema({
   image: {
     type: Array,   
   },
+  video: {
+    type: Array
+  },
   height: Number,
   width: Number,
   num_of_pockets: Number

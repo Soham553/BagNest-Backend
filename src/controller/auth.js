@@ -1,5 +1,8 @@
 import {google} from "googleapis";
 
+console.log("Client Id: ", process.env.CLINET_ID);
+console.log("Clinet secret: ", process.env.CLINET_SECRET);
+console.log("Call back url: ", process.env.REFRESH_TOKEN);
 
 const oauth2Client = new google.auth.OAuth2(
     process.env.CLINET_ID,
@@ -7,8 +10,6 @@ const oauth2Client = new google.auth.OAuth2(
     process.env.CALLBACK_URL
 )
 
-console.log("this is inside auth:", process.env.CALLBACK_URL);
-console.log("This is refresh token: ", process.env.REFRESH_TOKEN);
 
 oauth2Client.setCredentials({
     refresh_token: process.env.REFRESH_TOKEN,

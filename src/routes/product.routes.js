@@ -16,7 +16,10 @@ router.route("/products").get(getproducts);
 router.route("/products/:id").delete(deleteProducts);
 router.put(
   "/products/:id",
-  upload.single("image"),
+  upload.fields([
+  {name: "image", maxCount: 5},
+  {name: "video", maxCount: 2}
+]),
   update
 );
 router.route("/login").post(adminLogin)
