@@ -287,7 +287,7 @@ This project is licensed under the [MIT License](./LICENSE).
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@yourusername](https://github.com/Soham553)
 - Built with ❤️ to support my sister's bag business 👜
 
 ---
